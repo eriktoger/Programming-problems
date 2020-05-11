@@ -1,0 +1,7 @@
+
+#include "vector"
+
+#ifndef COMPETETIVE_PROGRAMMING_1402_REDUCING_DISHES_H
+#define COMPETETIVE_PROGRAMMING_1402_REDUCING_DISHES_H
+int maxSatisfaction(std::vector<int>& satisfaction);
+#endif //COMPETETIVE_PROGRAMMING_1402_REDUCING_DISHES_H
