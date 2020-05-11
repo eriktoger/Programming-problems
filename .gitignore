@@ -7,3 +7,5 @@ CMakeLists.txt
 catch.hpp
 
 main.cpp
+
+test-Template.cpp
