@@ -1,4 +1,4 @@
-#include "1b-Spreadsheet.h"
+#include "1B-Spreadsheet.h"
 #include <iostream>
 
 void spreadSheet(){
