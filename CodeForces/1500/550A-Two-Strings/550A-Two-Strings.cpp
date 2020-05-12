@@ -35,6 +35,11 @@ void twostrings() {
         cout << "NO";
         return;
     }
+    if (indexesAB.size() == 1 && indexesBA.size() == 2 && ( indexesAB[0] == indexesBA[0] ||
+        indexesAB[0] == indexesBA[1] )) {
+        cout << "NO";
+        return;
+    }
 
     cout << "YES";
 
