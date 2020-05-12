@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -20,12 +21,18 @@ void twostrings() {
             }
         }
     }
-    if(indexesAB.empty() || indexesBA.empty()){
+    if (indexesAB.empty() || indexesBA.empty()) {
         cout << "NO";
         return;
     }
-    if(indexesAB.size() == 1 && indexesBA.size() == 1 && indexesAB[0] == indexesBA[0]){
-        cout<< "NO";
+    if (indexesAB.size() == 1 && indexesBA.size() == 1 &&
+        (indexesAB[0] == indexesBA[0] || abs(indexesAB[0] - indexesBA[0]) == 2)) {
+        cout << "NO";
+        return;
+    }
+    if (indexesAB.size() == 2 && indexesBA.size() == 1 && indexesAB[0] == indexesBA[0] &&
+        (indexesAB[1] - indexesAB[0]) == 2) {
+        cout << "NO";
         return;
     }
 
