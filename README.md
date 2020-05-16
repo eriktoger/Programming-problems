@@ -1,11 +1,16 @@
-My goal is to solve problems from
+Repo for my solved C++ programming problems
 
-CodeForce https://codeforces.com/
+Im solving problems from:
 
-Leet code https://leetcode.com/
+- CodeForce https://codeforces.com/
+- username:eriktoger
 
-SPOJ https://www.spoj.com/
 
-Project Euler https://projecteuler.net/
+- Leet code https://leetcode.com/
+- username: kire85
+
+
+- Hackerrank https://www.hackerrank.com/
+- username: erik_toger
 
 
