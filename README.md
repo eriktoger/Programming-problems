@@ -2,15 +2,16 @@ Repo for my solved C++ programming problems
 
 Im solving problems from:
 
-- CodeForce https://codeforces.com/
-- username:eriktoger
+CodeForce
+- Page: https://codeforces.com/
+- My username:eriktoger
 
+Leet code
+- Page: https://leetcode.com/
+- My username: kire85
 
-- Leet code https://leetcode.com/
-- username: kire85
-
-
-- Hackerrank https://www.hackerrank.com/
-- username: erik_toger
+Hackerrank
+- Page: https://www.hackerrank.com/
+- My username: erik_toger
 
 
