@@ -33,7 +33,7 @@ void dna();
 void
 readData(unordered_map<string, vector<healthAndIndex>> &genesAndHealth, vector<strandInfo> &strands, int &longestGene);
 
-void readDataFromFile(unordered_map<string, vector<healthAndIndex>> &genesAndHealth, vector<strandInfo> &strands,
+void readDataFromFile(unordered_map<string, vector<healthAndIndex>> &genesAndHealth,vector <string> &genes, vector<strandInfo> &strands,
                       int &longestGene,string &path);
 
 void calcHealth(unordered_map<string, vector<healthAndIndex>> &genesAndHealth, strandInfo &strand,

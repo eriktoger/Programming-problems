@@ -131,7 +131,7 @@ calcHealthReverse(unordered_map <string, vector<healthAndIndex>> &genesAndHealth
 
 }
 
-void readDataFromFile(unordered_map <string, vector<healthAndIndex>> &genesAndHealth, vector <strandInfo> &strands,
+void readDataFromFile(unordered_map <string, vector<healthAndIndex>> &genesAndHealth, vector <string> &genes,vector <strandInfo> &strands,
                       int &longestGene, string &path) {
     ifstream inFile;
     inFile.open(path);
@@ -141,7 +141,6 @@ void readDataFromFile(unordered_map <string, vector<healthAndIndex>> &genesAndHe
     int n;
     inFile >> n;
 
-    vector <string> genes;
     int nrOfGenes = n;
     while (nrOfGenes--) {
         string gene;
