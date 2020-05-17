@@ -1,7 +1,7 @@
 #include "Determining-DNA-Health.h"
 
-// I ended up solving it with out aho or kmp
-// But you really should use some better algorithm.
+// I ended up solving it without aho or kmp
+// But you really should use some a algorithm like aho or kmp.
 
 void dna() {
     vector <strandInfo> strands;
