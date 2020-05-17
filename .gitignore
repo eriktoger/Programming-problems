@@ -11,3 +11,6 @@ main.cpp
 test-Template.cpp
 main-Template.cpp
 hackerrankTemp.cpp
+
+*.txt
+Competetive_programming
