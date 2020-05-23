@@ -8,7 +8,6 @@ using namespace std;
 #ifndef COMPETETIVE_PROGRAMMING_580C_KEFA_AND_PARK_H
 #define COMPETETIVE_PROGRAMMING_580C_KEFA_AND_PARK_H
 
-
 void kefaAndPark(std::istream &is = cin, std::ostream &os = cout);
 
 void

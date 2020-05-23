@@ -13,7 +13,6 @@ void kefaAndPark(std::istream &is, std::ostream &os) {
     cout << restaurants;
 }
 
-
 void
 readData(vector<int> &catsInNode, map<int, vector<int> > &adjacencyList, int &catLimit,
          std::istream &is) {

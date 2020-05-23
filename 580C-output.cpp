@@ -31,8 +31,6 @@ void kefaAndPark(std::istream &is, std::ostream &os) {
     dfs(1, 0, catsInNode, adjacencyList, catLimit, restaurants);
 
     cout << restaurants;
-
-
 }
 
 
