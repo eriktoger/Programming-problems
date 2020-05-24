@@ -16,5 +16,6 @@ Hackerrank
 
 
 Create output file
+
 The createOutput.cpp creates output for Codeforces and Hackerrank (I have not yet tested it on Hackerrank)
 Easiest is to change path in createOutputScript.sh and just run the script.
