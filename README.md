@@ -15,3 +15,9 @@ Hackerrank
 - My username: erik_toger
 
 
+The createOutput.cpp creates output for Codeforces and Hackerrank ( I have not yet tested it on Hackerrank)
+
+Compile with:
+g++ -o createOutput createOutput.cpp
+And run with:
+./createOutput path/to/folder/
