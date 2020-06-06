@@ -5,8 +5,8 @@
 
 using namespace std;
 
-#ifndef COMPETETIVE_PROGRAMMING_580C_KEFA_AND_PARK_H
-#define COMPETETIVE_PROGRAMMING_580C_KEFA_AND_PARK_H
+#ifndef COMPETITIVE_PROGRAMMING_580C_KEFA_AND_PARK_H
+#define COMPETITIVE_PROGRAMMING_580C_KEFA_AND_PARK_H
 
 void kefaAndPark(std::istream &is = cin, std::ostream &os = cout);
 
@@ -15,4 +15,4 @@ readData(vector<int> &catsInNode, map<int, vector<int> > &adjacencyList, int &ca
 
 void dfs(int node, int parent, vector<int> &catsInNode, map<int, vector<int> > &adjacencyList, int &catLimit, int &restaurants);
 
-#endif //COMPETETIVE_PROGRAMMING_580C_KEFA_AND_PARK_H
+#endif //COMPETITIVE_PROGRAMMING_580C_KEFA_AND_PARK_H

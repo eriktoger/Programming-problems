@@ -3,8 +3,8 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-#ifndef COMPETETIVE_PROGRAMMING_545C_WOODCUTTERS_H
-#define COMPETETIVE_PROGRAMMING_545C_WOODCUTTERS_H
+#ifndef COMPETITIVE_PROGRAMMING_545C_WOODCUTTERS_H
+#define COMPETITIVE_PROGRAMMING_545C_WOODCUTTERS_H
 
 struct treeInfo {
     int idx;
@@ -14,4 +14,4 @@ struct treeInfo {
 
 void woodcutters(std::istream &is = cin, std::ostream &os = cout);
 
-#endif //COMPETETIVE_PROGRAMMING_545C_WOODCUTTERS_H
+#endif //COMPETITIVE_PROGRAMMING_545C_WOODCUTTERS_H

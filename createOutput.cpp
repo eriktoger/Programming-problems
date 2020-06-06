@@ -83,7 +83,7 @@ void readFile(const char *path, string fileName, Data &data) {
                 line.substr(0, 5) == "using") {
 
                 if (line[0] == '#' || line.substr(0, 5) == "using") {
-                    if (statement.find("COMPETETIVE_PROGRAMMING") > statement.size()) {
+                    if (statement.find("COMPETITIVE_PROGRAMMING") > statement.size()) {
                         data.includes.emplace_back(statement);
                     }
 

@@ -15,8 +15,8 @@ using namespace std;
 #include <cstring>
 #include <cstdio>
 
-#ifndef COMPETETIVE_PROGRAMMING_DETERMINING_DNA_HEALTH_H
-#define COMPETETIVE_PROGRAMMING_DETERMINING_DNA_HEALTH_H
+#ifndef COMPETITIVE_PROGRAMMING_DETERMINING_DNA_HEALTH_H
+#define COMPETITIVE_PROGRAMMING_DETERMINING_DNA_HEALTH_H
 
 struct healthAndIndex {
     int health;
@@ -44,4 +44,4 @@ calcHealthReverse(unordered_map<string, vector<healthAndIndex>> &genesAndHealth,
                   unsigned long long int &maxNr, unsigned long long int &minNr,
                   int &longestGene);
 
-#endif //COMPETETIVE_PROGRAMMING_DETERMINING_DNA_HEALTH_H
+#endif //COMPETITIVE_PROGRAMMING_DETERMINING_DNA_HEALTH_H

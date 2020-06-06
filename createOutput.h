@@ -3,8 +3,8 @@
 #include <string>
 #include <vector>
 using namespace  std;
-#ifndef COMPETETIVE_PROGRAMMING_CREATEOUTPUT_H
-#define COMPETETIVE_PROGRAMMING_CREATEOUTPUT_H
+#ifndef COMPETITIVE_PROGRAMMING_CREATEOUTPUT_H
+#define COMPETITIVE_PROGRAMMING_CREATEOUTPUT_H
 
 struct Data{
     vector <string> includes;
@@ -20,4 +20,4 @@ string findFuncName( vector <string> const &functionsDeclarations);
 void removeIncludesWithFileNames(vector <string> const &fileNames, vector<string> &includes);
 void printMain(string &funcName, ofstream &outfile);
 
-#endif //COMPETETIVE_PROGRAMMING_CREATEOUTPUT_H
+#endif //COMPETITIVE_PROGRAMMING_CREATEOUTPUT_H
