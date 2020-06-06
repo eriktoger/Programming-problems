@@ -1,7 +1,12 @@
 
+#include <iostream>
+#include <stdio.h>
+#include <algorithm>
 
+using namespace std;
+#ifndef COMPETITIVE_PROGRAMMING_NEWTRY_H
+#define COMPETITIVE_PROGRAMMING_NEWTRY_H
 
-#ifndef COMPETITIVE_PROGRAMMING_431C_K_TREE_H
-#define COMPETITIVE_PROGRAMMING_431C_K_TREE_H
+void kTree(std::istream &is = cin, std::ostream &os = cout);
 
-#endif //COMPETITIVE_PROGRAMMING_431C_K_TREE_H
+#endif //COMPETITIVE_PROGRAMMING_NEWTRY_H
