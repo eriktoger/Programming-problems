@@ -6,10 +6,9 @@ TreeNode *Solution::recoverFromPreorder(const string &S) {
     int val = treeList[0].val;
     auto root = new TreeNode{val, nullptr, nullptr};
 
-    treeList.erase(treeList.begin());
-    traverseTree(root, 0, 0, treeList.size());
-    return root;
+    traverseTree(root, 0, 1, treeList.size());
 
+    return root;
 }
 
 void Solution::parseStringToTreeList(const string &S) {
