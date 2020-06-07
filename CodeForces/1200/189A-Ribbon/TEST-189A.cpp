@@ -31,6 +31,36 @@ TEST_CASE( "Example 2", "Template" ) {
 
     REQUIRE(test_output_text== "2");
 }
+TEST_CASE( "Example 35", "Template" ) {
+    stringbuf test_input("3455 244 3301 3", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    ribbon();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text== "991");
+}
+
+
+TEST_CASE( "Test 41", "Template" ) {
+    stringbuf test_input("53 10 11 23", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    ribbon();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text== "5");
+}
 
 
 
