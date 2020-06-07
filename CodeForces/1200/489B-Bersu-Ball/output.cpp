@@ -36,17 +36,14 @@ void ball(std::istream &is, std::ostream &os) {
 
     int pairs = 0;
     while (itBoy != boys.end() && itGirl != girls.end()) {
-        while (itGirl != girls.end()) {
-            if (abs(*itBoy - *itGirl) <= 1) {
-                pairs++;
-                itBoy++;
-                itGirl++;
-                break;
-            } else if (*itBoy > *itGirl) {
-                itGirl++;
-            } else if (*itGirl > *itBoy) {
-                itBoy++;
-            }
+        if (abs(*itBoy - *itGirl) <= 1) {
+            pairs++;
+            itBoy++;
+            itGirl++;
+        } else if (*itBoy > *itGirl) {
+            itGirl++;
+        } else if (*itGirl > *itBoy) {
+            itBoy++;
         }
     }
 
