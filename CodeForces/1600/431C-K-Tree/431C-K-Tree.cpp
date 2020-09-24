@@ -2,16 +2,15 @@
 #include "431C-K-Tree.h"
 
 
-const int mod = 1e9 + 7;
-
-int dp[100][2];
 
 void add(int &a, int b) {
     a += b;
-    a %= mod;
+    a %=  (int) 1e9 + 7;
 }
 
 void kTree(std::istream &is, std::ostream &os) {
+
+    int dp[100][2];
 
     dp[0][0] = 1;
     dp[0][1] = 0;
