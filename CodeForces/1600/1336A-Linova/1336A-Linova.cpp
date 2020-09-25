@@ -1,5 +1,8 @@
 #include "1336A-Linova.h"
-
+//maybe write it as using objects instead of pointers?
+// have everything in vector ( and use index as instant access)
+// start with City(0) which has very low score (ore remove it before sorting)
+// and see if it helps.
 City::City(int _id) {
     id = _id;
     score = 0;
