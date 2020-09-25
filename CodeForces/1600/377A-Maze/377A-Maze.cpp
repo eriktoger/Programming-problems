@@ -1,4 +1,4 @@
-#include "337A-Maze.h"
+#include "377A-Maze.h"
 #include <vector>
 
 void maze(std::istream &is, std::ostream &os) {
