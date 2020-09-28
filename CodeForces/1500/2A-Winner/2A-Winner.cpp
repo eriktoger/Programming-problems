@@ -1,34 +1,29 @@
 #include "2A-Winner.h"
+
 void func(std::istream &is, std::ostream &os) {
 
     int rounds;
     cin >> rounds;
     int counter = 1;
-    map<string,Person> persons;
+    map<string, Person> persons;
     string name;
     int value;
-    while(rounds--){
+    while (rounds--) {
         cin >> name;
         cin >> value;
-        if ( persons.count(name) ) {
+        if (persons.count(name)) {
 
-            persons[name].changeScore(value,counter);
-        }else{
+            persons[name].changeScore(value, counter);
+        } else {
             persons[name] = Person();
-            persons[name].changeScore(value,counter);
+            persons[name].changeScore(value, counter);
         }
 
         counter++;
     }
 
-    auto maxPerson = persons.begin();
-    auto it = persons.begin();
-    while(it != persons.end()){
-        if( maxPerson->second < it->second ){
-            maxPerson = it;
-        }
-        it++;
-    }
-    cout << maxPerson->first;
+    cout << max_element(persons.begin(), persons.end(), [](auto it1, auto it2) {
+        return it1.second < it2.second;
+    })->first;
 
 }
