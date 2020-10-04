@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path="CodeForces/1500/580B-Kefa-&-Company/"
+path="CodeForces/1300/4C-Registration/"
 g++ -o createOutput createOutput.cpp -Wall -std=c++17
 ./createOutput $path
 filename="output.cpp"
