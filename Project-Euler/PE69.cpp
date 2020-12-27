@@ -4,18 +4,18 @@
 #include <algorithm>
 #include <map>
 #include <cmath>
+#include "../Other/Sieve/sieve.h"
 
 using namespace std;
 
-vector<int> generatePrimes();
 
 map<int, int> findPrimeFactors(int current, vector<int> &primes);
 
 void updateAnswer(int current, double &quotient, int &n, map<int, int> const &primeFactors);
 
 int main() {
-    vector<int> v = generatePrimes();
     int limit = 1000000;
+    vector<int> v = generatePrimes(limit);
     int current = 1;
     double quotient = 0;
     int n = 0;
@@ -26,22 +26,7 @@ int main() {
         current++;
     }
     cout << "Answer: " << n << endl;
-}
 
-vector<int> generatePrimes() {
-    vector<int> primes(1000000);
-    iota(begin(primes), end(primes), 2);
-
-    int index = 0;
-    while (index < primes.size()) {
-        int p = primes[index];
-        primes.erase(std::remove_if(primes.begin(),
-                               primes.end(),
-                               [p](int x) { return x != p && x % p == 0; }),
-                primes.end());
-        index++;
-    }
-    return primes;
 }
 
 map<int, int> findPrimeFactors(int current, vector<int> &primes) {
