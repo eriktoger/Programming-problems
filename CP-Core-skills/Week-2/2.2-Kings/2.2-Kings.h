@@ -23,4 +23,9 @@ void placingKing(const int &freeSquares, Square &square, int &kingsPlaced);
 
 void updateBoard(const int &i, const int &j, const int &rows, const int &cols,  vector<vector<Square> > &board);
 
+void printBoard( const vector<vector<Square> > &board);
+
+void shortSolution(std::istream &is = cin, std::ostream &os = cout);
+
+
 #endif //COMPETITIVE_PROGRAMMING_2_2_KINGS_H

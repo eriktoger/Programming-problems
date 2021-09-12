@@ -124,3 +124,123 @@ TEST_CASE("Input 8", "Template") {
 
     REQUIRE(test_output_text == "0");
 }
+
+TEST_CASE("shortSolution 1", "[short]") {
+    stringbuf test_input("1 2\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "1");
+}
+
+TEST_CASE("shortSolution 2", "[short]") {
+    stringbuf test_input("3 3\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "8");
+}
+
+TEST_CASE("shortSolution 3", "[short]") {
+    stringbuf test_input("2 99\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "165");
+}
+
+TEST_CASE("shortSolution 4", "[short]") {
+    stringbuf test_input("1 99\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "66");
+}
+
+TEST_CASE("shortSolution 5", "[short]") {
+    stringbuf test_input("51 51\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "2312");
+}
+
+TEST_CASE("shortSolution 6", "[short]") {
+    stringbuf test_input("50 50\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "2211");
+}
+
+TEST_CASE("shortSolution 7", "[short]") {
+    stringbuf test_input("3 100\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "266");
+}
+
+TEST_CASE("shortSolution 8", "[short]") {
+    stringbuf test_input("1 1\n", ios_base::in);
+    stringbuf test_output(ios_base::out);
+    streambuf *const cin_buf = cin.rdbuf(&test_input);
+    streambuf *const cout_buf = cout.rdbuf(&test_output);
+
+    shortSolution();
+
+    cout.rdbuf(cout_buf);
+    cin.rdbuf(cin_buf);
+    string test_output_text = test_output.str();
+
+    REQUIRE(test_output_text == "0");
+}

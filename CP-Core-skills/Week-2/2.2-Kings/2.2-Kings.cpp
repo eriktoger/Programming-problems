@@ -12,6 +12,39 @@ const vector<Move> adjacentSquares = {{0,  -1},
                                       {1,  0},
                                       {1,  -1}};
 
+void shortSolution(std::istream &is, std::ostream &os) {
+    int rows;
+    int cols;
+    cin >> rows;
+    cin >> cols;
+    int kingsPlaced = 0;
+
+    //Use printBoard with the longer solution to see that
+    //the board repeats every 3 rows.
+    int clusters = rows / 3;
+    int leftOvers = rows % 3;
+    int fullRows = clusters * 2;
+    int holeRows = clusters;
+    if (leftOvers >= 1) {
+        holeRows++;
+    }
+    if (leftOvers == 2) {
+        fullRows++;
+    }
+
+    kingsPlaced += fullRows * cols;
+    int trios = cols / 3;
+    kingsPlaced += (trios * 2) * holeRows;
+
+    int squaresLeft = cols % 3;
+    if (squaresLeft == 2) {
+        kingsPlaced += holeRows;
+    }
+
+    cout << kingsPlaced;
+}
+
+
 void func(std::istream &is, std::ostream &os) {
     int rows;
     int cols;
@@ -25,18 +58,19 @@ void func(std::istream &is, std::ostream &os) {
         for (int j = 0; j < cols; j++) {
             int freeSquares = 0;
             bool noSuffocation = true;
-            canKingBePlaced(i, j, rows, cols, board,noSuffocation, freeSquares);
+            canKingBePlaced(i, j, rows, cols, board, noSuffocation, freeSquares);
             if (freeSquares && noSuffocation) {
-                placingKing(freeSquares,board[i][j],kingsPlaced);
+                placingKing(freeSquares, board[i][j], kingsPlaced);
                 updateBoard(i, j, rows, cols, board);
             }
         }
     }
+
     cout << kingsPlaced;
 }
 
 void canKingBePlaced(const int &i, const int &j, const int &rows, const int &cols, const vector<vector<Square> > &board,
-               bool &noSuffocation, int &freeSquares) {
+                     bool &noSuffocation, int &freeSquares) {
     for (const auto &move: adjacentSquares) {
         bool insideTheBoard = i + move.i >= 0 && i + move.i < rows && j + move.j >= 0 && j + move.j < cols;
         if (insideTheBoard) {
@@ -50,13 +84,14 @@ void canKingBePlaced(const int &i, const int &j, const int &rows, const int &col
         }
     }
 }
-void placingKing(const int& freeSquares,Square& square,int & kingsPlaced){
+
+void placingKing(const int &freeSquares, Square &square, int &kingsPlaced) {
     square.occupied = true;
     square.freeAdjacentSquares = freeSquares;
     kingsPlaced++;
 }
 
-void updateBoard(const int &i, const int &j, const int &rows, const int &cols,  vector<vector<Square> > &board){
+void updateBoard(const int &i, const int &j, const int &rows, const int &cols, vector<vector<Square> > &board) {
     for (const auto &move: adjacentSquares) {
         bool insideTheBoard = i + move.i >= 0 && i + move.i < rows && j + move.j >= 0 && j + move.j < cols;
         if (insideTheBoard) {
@@ -65,5 +100,18 @@ void updateBoard(const int &i, const int &j, const int &rows, const int &cols,  
                 board[i + move.i][j + move.j].freeAdjacentSquares--;
             }
         }
+    }
+}
+
+void printBoard(const vector<vector<Square> > &board) {
+    for (int i = 0; i < board.size(); i++) {
+        for (int j = 0; j < board[0].size(); j++) {
+            if (board[i][j].occupied) {
+                cout << "K";
+            } else {
+                cout << "_";
+            }
+        }
+        cout << endl;
     }
 }
