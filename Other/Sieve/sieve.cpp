@@ -11,7 +11,7 @@ vector<int> generatePrimes(int limit) {
         if (prime == -1) {
             continue;
         }
-        for (int i = prime * prime; i < limit; i += prime) {
+        for (long int i = prime * prime; i < limit; i += prime) {
             if (i % prime == 0) {
                 primeNumbers[i] = -1;
             }
@@ -21,3 +21,17 @@ vector<int> generatePrimes(int limit) {
     return primeNumbers;
 }
 
+vector<bool> generatePrimeFlags(int limit) {
+
+    vector<bool> primeFlags(limit, true);
+    primeFlags[0] = false;
+    primeFlags[1] = false;
+    for (long long i = 2; i < limit; i++) {
+        if (primeFlags[i] ) {
+            for (long long j = i * i; j < limit; j += i) {
+                primeFlags[j] = false;
+            }
+        }
+    }
+    return primeFlags;
+}
