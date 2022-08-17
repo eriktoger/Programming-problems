@@ -1,6 +1,5 @@
 #!/bin/bash
-
-path="CodeForces/1300/4C-Registration/"
+path="$1/$2/$3-$4/"
 g++ -o createOutput createOutput.cpp -Wall -std=c++17
 ./createOutput $path
 filename="output.cpp"
