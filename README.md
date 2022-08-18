@@ -23,7 +23,8 @@ Hackerrank
 
 # Run tests:
 
-- Go to folder and run: g++ -o main TEST.cpp main.cpp && ./main
+- You first need to add catch to catch.hpp
+- Go to folder and run: g++ -std=c++20 -o main TEST.cpp main.cpp && ./main
 
 # Create output file
 
