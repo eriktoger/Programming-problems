@@ -62,3 +62,5 @@ void func(std::istream &is, std::ostream &os)
 
     cout << start;
 }" >> main.cpp
+
+touch output.cpp
