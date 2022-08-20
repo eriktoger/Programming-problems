@@ -25,6 +25,7 @@ Hackerrank
 
 - You first need to add catch to catch.hpp
 - Go to folder and run: g++ -std=c++20 -o main TEST.cpp main.cpp && ./main
+- Or use debugger by pressing F5 (in visual studio code) when you are in the test file. You do need a task.json in .vscode folder.
 
 # Create output file
 
