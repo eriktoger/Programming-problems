@@ -30,8 +30,8 @@ Hackerrank
 # Create output file
 
 - The createOutput.cpp creates output for Codeforces
-- You need to add a myPath.h file that contains const string myPath = "/path/to/repo";
-- You need to generate createOutput: g++ -o createOutput createOutput.cpp -Wall -std=c++20
+- You need to add a myPath.h file that contains: string myPath = "/path/to/repo";
+- You need to build generateOutput: g++ -o generateOutput generateOutput.cpp -Wall -std=c++20
 - run: ./createOutputScript.sh CodeForces 1400 1714E Add-Modulo-10
 
 # Convert input/output from CodeForces

@@ -8,6 +8,7 @@ CMakeLists.txt
 
 catch.hpp
 main
+TEST
 
 test-Template.cpp
 main-Template.cpp
@@ -19,4 +20,6 @@ CoreSkill
 ProjectEuler
 myPath.h
 createOutput
+generateOutput
+
 output.cpp
