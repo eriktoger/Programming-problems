@@ -1,5 +1,6 @@
 use std::io::{BufRead, Error, Write};
 
+#[allow(dead_code)]
 pub fn get_solution<R: BufRead, W: Write>(reader: &mut R, writer: &mut W) -> Result<(), Error> {
     let mut lines = String::new();
     reader.read_line(&mut lines)?;
@@ -43,6 +44,6 @@ mod tests {
         let expected_output = "YES\n";
         let mut output = Vec::new();
         get_solution(&mut BufReader::new(input.as_bytes()), &mut output).unwrap();
-        assert_eq!(output, expected_output.as_bytes());
+        assert_eq!(std::str::from_utf8(&output).unwrap(), expected_output);
     }
 }
