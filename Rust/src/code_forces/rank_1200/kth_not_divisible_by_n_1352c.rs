@@ -1,5 +1,6 @@
 use std::io::{BufRead, Error, Write};
 
+#[allow(dead_code)]
 pub fn get_solution<R: BufRead, W: Write>(reader: &mut R, writer: &mut W) -> Result<(), Error> {
     let mut lines = String::new();
     reader.read_line(&mut lines)?;
