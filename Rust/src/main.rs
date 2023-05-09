@@ -1,4 +1,5 @@
 mod code_forces;
+mod common;
 
 fn main() {
     let stdin = std::io::stdin();
