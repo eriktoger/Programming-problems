@@ -76,7 +76,7 @@ mod tests_459b {
     #[test]
     fn test_get_solution_5() {
         let input = "2\n1 1\n";
-        let expected_output = "0 11\n";
+        let expected_output = "0 1\n";
         let mut output = Vec::new();
         get_solution(&mut BufReader::new(input.as_bytes()), &mut output).unwrap();
         assert_eq!(std::str::from_utf8(&output).unwrap(), expected_output);
