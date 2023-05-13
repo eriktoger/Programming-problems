@@ -9,8 +9,9 @@ const MAIN_FUNCTION: &str = "fn main() {
     let mut stdout = std::io::stdout();
     let _ = get_solution(&mut stdin.lock(), &mut stdout);
     std::io::Write::flush(&mut stdout).unwrap();
+}
 
-}";
+";
 
 fn get_starter_code(id: &str) -> String {
     format!(
@@ -20,7 +21,7 @@ use std::io::{{BufRead, Error, Write}};
 
 #[allow(dead_code)]
 pub fn get_solution<R: BufRead, W: Write>(reader: &mut R, writer: &mut W) -> Result<(), Error> {{
-    let lines: usize = read_line(reader)?;
+    let test_cases: usize = read_line(reader)?;
   
 
     Ok(())
