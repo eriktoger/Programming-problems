@@ -1,4 +1,4 @@
-use crate::common::read_line;
+use crate::common::{read_line, vec_to_string};
 use std::{
     collections::VecDeque,
     io::{BufRead, Error, Write},
@@ -36,11 +36,7 @@ pub fn get_solution<R: BufRead, W: Write>(reader: &mut R, writer: &mut W) -> Res
 
         writeln!(writer, "{max}")?;
 
-        let s = indices
-            .iter()
-            .map(|i| i.to_string())
-            .collect::<Vec<String>>()
-            .join(" ");
+        let s = vec_to_string(indices);
 
         writeln!(writer, "{s}")?;
     }
