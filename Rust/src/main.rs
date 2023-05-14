@@ -138,6 +138,9 @@ fn main() {
                     let helper_lines = io::BufReader::new(helper_file).lines();
                     for helper_line in helper_lines {
                         let helper_line = helper_line.expect("reading  helper line");
+                        if helper_line.starts_with("use super::") {
+                            continue;
+                        }
                         let _ = writeln!(output_file, "{helper_line}");
                     }
                     let _ = writeln!(output_file, "");
