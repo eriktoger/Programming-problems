@@ -26,13 +26,21 @@ void func(std::istream &is = cin, std::ostream &os = cout);
 
 touch TEST.cpp
 echo "#include <catch2/catch_test_macros.hpp>
-#include "\""main.h"\""
-
+#include <catch2/generators/catch_generators.hpp>
+#include <catch2/generators/catch_generators_adapters.hpp>
+#include "main.h"
+#define CATCH_CONFIG_RUNNER
 using namespace std;
 
+struct TestCase
+{
+    string input;
+    string output;
+};
 
-TEST_CASE( "\""Input 1"\"", "\""First"\"" ) {
-    stringbuf test_input("\"""\"", ios_base::in);
+string callFunc(string input)
+{
+    stringbuf test_input(input, ios_base::in);
     stringbuf test_output(ios_base::out);
     streambuf *const cin_buf = cin.rdbuf(&test_input);
     streambuf *const cout_buf = cout.rdbuf(&test_output);
@@ -41,9 +49,17 @@ TEST_CASE( "\""Input 1"\"", "\""First"\"" ) {
 
     cout.rdbuf(cout_buf);
     cin.rdbuf(cin_buf);
-    string test_output_text = test_output.str();
+    return test_output.str();
+}
 
-    REQUIRE(test_output_text== "\"""\"");
+TEST_CASE("Input Test", "[input][output]")
+{
+    auto data = GENERATE(TestCase{"input", "output"});
+
+    SECTION("Test case " + data.input)
+    {
+        REQUIRE(callFunc(data.input) == data.output);
+    }
 }" >> TEST.cpp
 
 
