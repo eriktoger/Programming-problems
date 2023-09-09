@@ -1,3 +1,9 @@
+### Create new problem
+
+cargo run **rank** **nam** **id**
+
+eg: cargo run 1500 "Special Elements" 1352E
+
 ### Run tests
 
 Run all tests: cargo test
