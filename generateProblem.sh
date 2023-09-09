@@ -28,7 +28,7 @@ touch TEST.cpp
 echo "#include <catch2/catch_test_macros.hpp>
 #include <catch2/generators/catch_generators.hpp>
 #include <catch2/generators/catch_generators_adapters.hpp>
-#include "main.h"
+#include "\""main.h"\""
 #define CATCH_CONFIG_RUNNER
 using namespace std;
 
@@ -52,11 +52,11 @@ string callFunc(string input)
     return test_output.str();
 }
 
-TEST_CASE("Input Test", "[input][output]")
+TEST_CASE("\""Input Test"\"", "\""[input][output]"\"")
 {
-    auto data = GENERATE(TestCase{"input", "output"});
+    auto data = GENERATE(TestCase{"\""input"\"", "\""output"\""});
 
-    SECTION("Test case " + data.input)
+    SECTION("\""Test case "\"" + data.input)
     {
         REQUIRE(callFunc(data.input) == data.output);
     }
