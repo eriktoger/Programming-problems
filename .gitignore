@@ -7,6 +7,7 @@ build/
 CMakeLists.txt
 
 catch.hpp
+Catch2/
 main
 TEST
 
@@ -15,11 +16,15 @@ main-Template.cpp
 hackerrankTemp.cpp
 
 *.txt
+!CMakeLists.txt
 Competitive_programming
 CoreSkill
 ProjectEuler
 myPath.h
 createOutput
 generateOutput
+Makefile
+CMakeFiles/
+cmake_install.cmake
 
 output.cpp

@@ -25,8 +25,7 @@ void func(std::istream &is = cin, std::ostream &os = cout);
 #endif //COMPETITIVE_PROGRAMMING_MAIN_H" >> main.h
 
 touch TEST.cpp
-echo "#define CATCH_CONFIG_MAIN
-#include "\""../../../catch.hpp"\""
+echo "#include <catch2/catch_test_macros.hpp>
 #include "\""main.h"\""
 
 using namespace std;
@@ -48,11 +47,9 @@ TEST_CASE( "\""Input 1"\"", "\""First"\"" ) {
 }" >> TEST.cpp
 
 
-
 touch main.cpp
 
-echo "
-#include "\""main.h"\""
+echo "#include "\""main.h"\""
 
 void func(std::istream &is, std::ostream &os)
 {
@@ -64,3 +61,9 @@ void func(std::istream &is, std::ostream &os)
 }" >> main.cpp
 
 touch output.cpp
+
+touch CMakeLists.txt 
+
+echo "find_package(Catch2 3 REQUIRED)
+add_executable(TEST main.cpp TEST.cpp)
+target_link_libraries(TEST PRIVATE Catch2::Catch2WithMain)" >> CMakeLists.txt 
