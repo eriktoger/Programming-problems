@@ -19,11 +19,11 @@ Hackerrank
 
 # Create new problem:
 
-- . generateProblem.sh CodeForces 1400 1714E Add-Modulo-10
+- ./generateProblem.sh CodeForces 1400 1714E Add-Modulo-10
 
 # Run tests:
 
-- You first need to add catch to catch.hpp
+- You first need to install Catch2.
 - Go to folder and run: g++ -std=c++20 -o main TEST.cpp main.cpp && ./main
 - Or use debugger by pressing F5 (in visual studio code) when you are in the test file. You do need a task.json in .vscode folder.
 
@@ -32,7 +32,7 @@ Hackerrank
 - The createOutput.cpp creates output for Codeforces
 - You need to add a myPath.h file that contains: string myPath = "/path/to/repo";
 - You need to build generateOutput: g++ -o generateOutput generateOutput.cpp -Wall -std=c++20
-- run: ./createOutputScript.sh CodeForces 1400 1714E Add-Modulo-10
+- run: ./generateOutput CodeForces 1400 1714E Add-Modulo-10
 
 # Convert input/output from CodeForces
 
