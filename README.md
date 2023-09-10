@@ -27,6 +27,7 @@ Hackerrank
 - Go to folder and run: cmake . && make
 - cmake . is only needed once
 - Or use debugger by pressing F5 (in visual studio code) when you are in the test file. You do need a task.json in .vscode folder.
+- And also update launch.json: "program": "${workspaceFolder}/CodeForces/1400/507B-Amr-and-Pins/TEST",
 
 # Create output file
 

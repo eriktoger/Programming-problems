@@ -83,6 +83,7 @@ touch CMakeLists.txt
 echo "project($prefix)
 cmake_minimum_required(VERSION 3.22)
 find_package(Catch2 3 REQUIRED)
+set(CMAKE_BUILD_TYPE Debug)
 add_executable(TEST main.cpp TEST.cpp)
 target_link_libraries(TEST PRIVATE Catch2::Catch2WithMain)
 add_custom_target(RUN_TEST ALL DEPENDS TEST COMMAND TEST)" >> CMakeLists.txt
