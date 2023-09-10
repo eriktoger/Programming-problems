@@ -80,6 +80,9 @@ touch output.cpp
 
 touch CMakeLists.txt 
 
-echo "find_package(Catch2 3 REQUIRED)
+echo "project($prefix)
+cmake_minimum_required(VERSION 3.22)
+find_package(Catch2 3 REQUIRED)
 add_executable(TEST main.cpp TEST.cpp)
-target_link_libraries(TEST PRIVATE Catch2::Catch2WithMain)" >> CMakeLists.txt 
+target_link_libraries(TEST PRIVATE Catch2::Catch2WithMain)
+add_custom_target(RUN_TEST ALL DEPENDS TEST COMMAND TEST)" >> CMakeLists.txt

@@ -24,7 +24,8 @@ Hackerrank
 # Run tests:
 
 - You first need to install Catch2.
-- Go to folder and run: g++ -std=c++20 -o main TEST.cpp main.cpp && ./main
+- Go to folder and run: cmake . && make
+- cmake . is only needed once
 - Or use debugger by pressing F5 (in visual studio code) when you are in the test file. You do need a task.json in .vscode folder.
 
 # Create output file

@@ -6,17 +6,16 @@ build/
 
 CMakeLists.txt
 
-catch.hpp
-Catch2/
 main
 TEST
+
 
 test-Template.cpp
 main-Template.cpp
 hackerrankTemp.cpp
 
 *.txt
-!CMakeLists.txt
+!CodeForces/**/**/CMakeLists.txt
 Competitive_programming
 CoreSkill
 ProjectEuler
