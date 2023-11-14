@@ -15,7 +15,6 @@ main-Template.cpp
 hackerrankTemp.cpp
 
 *.txt
-!CodeForces/**/**/CMakeLists.txt
 Competitive_programming
 CoreSkill
 ProjectEuler
@@ -27,3 +26,13 @@ CMakeFiles/
 cmake_install.cmake
 
 output.cpp
+
+lib/
+_deps/
+bin
+
+TEST*
+!TEST.cpp
+CTest*
+.clang-format
+*.exe
