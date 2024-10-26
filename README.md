@@ -29,6 +29,22 @@ Hackerrank
 - Or use debugger by pressing F5 (in visual studio code) when you are in the test file. You do need a task.json in .vscode folder.
 - And also update launch.json: "program": "${workspaceFolder}/CodeForces/1400/507B-Amr-and-Pins/TEST",
 
+# Run tests on Windows (With google test)
+
+- Download the zip files-extract them and move to Program files and add the path to .bashrc
+  - Install g++
+    - I used x86_64-14.2.0-release-win32-seh-ucrt-rt_v12-rev0.7z
+    - export PATH="$PATH:/c/Program Files/mingw64/bin"
+  - Install Cmake
+    - I used cmake-3.30.5-windows-x86_64.zip
+    - export PATH="$PATH:/c/Program Files/cmake/bin"
+- Add the files from Example-vscode to .vscode
+- Change the program to your current code problem path.
+- Build and run tests (navigate to the folder for your code problem): cmake --build . && ./Test.exe
+- Go to TEST.cpp, a breakpoint and press F5 to see that the debugger stops at a breakpoint.
+- The path to my repo for "Create output file" looks like this:
+  - std::string myPath = "C:\\Users\\etoger\\repos\\other\\Programming-problems";
+
 # Create output file
 
 - The createOutput.cpp creates output for Codeforces

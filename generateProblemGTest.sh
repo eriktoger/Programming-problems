@@ -60,6 +60,10 @@ touch CMakeLists.txt
 echo "cmake_minimum_required(VERSION 3.22)
 cmake_policy(SET CMP0135 NEW)
 project($prefix)
+
+# Add debugging flags
+set(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} -g\")
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -69,7 +73,6 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "\"""\"" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-
 enable_testing()
 
 add_executable(
@@ -77,6 +80,10 @@ add_executable(
   TEST.cpp
   main.cpp
 )
+
+# Specify C++23 standard
+target_compile_features(TEST PRIVATE cxx_std_23)
+
 target_link_libraries(
   TEST
   GTest::gtest_main

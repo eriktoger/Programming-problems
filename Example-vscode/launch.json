@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Test", 
+            "type": "cppdbg", 
+            "request": "launch", 
+            "cwd": "${workspaceFolder}", 
+            "miDebuggerPath": "C:/Program Files/mingw64/bin/gdb.exe",
+            "program": "${workspaceFolder}/CodeForces/1200/514A-Chewbacca-and-Number/TEST"
+        }
+    ]
+}
