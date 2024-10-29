@@ -7,7 +7,13 @@
             "request": "launch", 
             "cwd": "${workspaceFolder}", 
             "miDebuggerPath": "C:/Program Files/mingw64/bin/gdb.exe",
-            "program": "${workspaceFolder}/CodeForces/1200/514A-Chewbacca-and-Number/TEST"
+            "program": "${workspaceFolder}/CodeForces/1600/1363C-Game-on-Leaves/TEST",
+            "setupCommands": [
+                {
+                  "description": "Enable pretty-printing for gdb",
+                  "text": "-enable-pretty-printing",
+                  "ignoreFailures": true
+                }]
         }
     ]
 }

@@ -42,6 +42,7 @@ Hackerrank
 - Change the program to your current code problem path.
 - Build and run tests (navigate to the folder for your code problem): cmake --build . && ./Test.exe
 - Go to TEST.cpp, a breakpoint and press F5 to see that the debugger stops at a breakpoint.
+- Make sure that vector/arrays/maps work, otherwise you might need to install python
 - The path to my repo for "Create output file" looks like this:
   - std::string myPath = "C:\\Users\\etoger\\repos\\other\\Programming-problems";
 
