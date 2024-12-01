@@ -16,6 +16,6 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_subdirectory(utils)
+add_subdirectory(common)
 
 add_subdirectory("2024/Day01")

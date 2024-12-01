@@ -1,34 +1,20 @@
-#include "solution.h"
+#include "solutionTwo.h"
 
-vector<string> solutionTwo(vector<string> const &input)
+int computeSimilarity(int acc, const int &left, const map<int, int> &counter)
 {
-    vector<int> leftSide;
-    vector<int> rightSide;
-
-    for (auto const &line : input)
+    if (counter.count(left))
     {
-        stringstream ss(line);
-        string word;
-        bool isLeft = true;
-        while (ss >> word)
-        {
-            if (isLeft)
-            {
-                leftSide.push_back(stoi(word));
-                isLeft = false;
-            }
-            else
-            {
-                rightSide.push_back(stoi(word));
-                isLeft = true;
-            }
-        }
+        return acc + left * counter.at(left);
     }
+    return acc;
+}
 
+int calcSimilarity(vector<int> const &leftSide, vector<int> const &rightSide)
+{
     std::map<int, int> counter;
     for (auto const &right : rightSide)
     {
-        if (counter.count(right))
+        if (counter.contains(right))
         {
             counter[right]++;
         }
@@ -38,15 +24,23 @@ vector<string> solutionTwo(vector<string> const &input)
         }
     };
 
-    long long totalSimilarity = 0;
-    for (auto const &left : leftSide)
+    auto similarityCalculator = [&counter](int acc, const int &left)
     {
-        if (counter.count(left))
-        {
-            totalSimilarity += (left * counter[left]);
-        }
+        return computeSimilarity(acc, left, counter);
     };
 
-    vector<string> output{to_string(totalSimilarity)};
+    int totalSimilarity = std::accumulate(leftSide.begin(), leftSide.end(), 0, similarityCalculator);
+
+    return totalSimilarity;
+}
+
+vector<string> solutionTwo(vector<string> const &input)
+{
+    vector<int> leftSide;
+    vector<int> rightSide;
+
+    splitInput(input, leftSide, rightSide);
+    auto similarity = calcSimilarity(leftSide, rightSide);
+    vector<string> output{to_string(similarity)};
     return output;
 }

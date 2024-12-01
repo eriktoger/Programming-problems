@@ -13,7 +13,10 @@ cp -r "ExampleDay/"* "$target_folder/"
 cd $target_folder
 
 echo "#include <string>
-const std::string path =\"$target_folder/test_files/\";" > constants.h
+const std::string path = \"$target_folder/test_files/\";
+const std::string partOnePath = path + \"partOne/\";
+const std::string partTwoPath = path + \"partTwo/\";
+" > constants.h
 
 touch CMakeLists.txt 
 
@@ -21,9 +24,9 @@ echo "set(CMAKE_CXX_FLAGS \" -g\")
 
 enable_testing()
 
-add_executable($executable TEST.cpp solution.cpp)
+add_executable($executable TEST.cpp solutionOne.cpp solutionTwo.cpp)
 
-target_link_libraries($executable utils)
+target_link_libraries($executable common)
 
 target_link_libraries($executable GTest::gtest_main)
 

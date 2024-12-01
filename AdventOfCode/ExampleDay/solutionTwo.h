@@ -1,12 +1,6 @@
-#include "utils.h"
-#include "common.h"
 #include <iostream>
 #include <vector>
-#include <string>
-#include <sstream>
-#include <algorithm>
-#include <map>
-#include <numeric>
+#include "common.h"
 
 using namespace std;
 
