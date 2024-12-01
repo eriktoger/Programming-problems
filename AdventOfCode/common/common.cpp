@@ -59,3 +59,25 @@ vector<vector<string>> splitLinesToWords(vector<string> const &input)
 
     return result;
 }
+
+vector<vector<string>> splitOnDelimiter(const vector<string> &input, const string &delimiter)
+{
+    vector<vector<string>> result;
+    for (const auto &line : input)
+    {
+        vector<string> temp;
+        size_t start = 0;
+        size_t end = 0;
+
+        while ((end = line.find(delimiter, start)) != string::npos)
+        {
+            temp.emplace_back(line.substr(start, end - start));
+            start = end + delimiter.length();
+        }
+
+        temp.emplace_back(line.substr(start));
+        result.emplace_back(temp);
+    }
+
+    return result;
+}
