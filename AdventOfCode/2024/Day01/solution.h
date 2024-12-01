@@ -2,6 +2,9 @@
 #include <vector>
 #include "utils.h"
 #include "constants.h"
+#include <string>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
