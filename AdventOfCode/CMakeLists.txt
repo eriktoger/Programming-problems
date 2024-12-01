@@ -19,3 +19,4 @@ enable_testing()
 add_subdirectory(common)
 
 add_subdirectory("2024/Day01")
+add_subdirectory("2024/Day02")
