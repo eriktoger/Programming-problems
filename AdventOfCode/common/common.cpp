@@ -41,3 +41,21 @@ void fromVectorToFile(string fileName, vector<string> const &input)
         throw std::runtime_error("Could not open file");
     }
 }
+
+vector<vector<string>> splitLinesToWords(vector<string> const &input)
+{
+    vector<vector<string>> result;
+    for (auto const &line : input)
+    {
+        vector<string> temp;
+        stringstream ss(line);
+        string word;
+        while (ss >> word)
+        {
+            temp.emplace_back(word);
+        }
+        result.emplace_back(temp);
+    }
+
+    return result;
+}

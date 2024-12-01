@@ -1,24 +1,12 @@
 #include "utils.h"
+#include "common.h"
 
 void splitInput(vector<string> const &input, vector<int> &leftSide, vector<int> &rightSide)
 {
-    for (auto const &line : input)
+    auto splitInput = splitLinesToWords(input);
+    for (auto const &words : splitInput)
     {
-        stringstream ss(line);
-        string word;
-        bool isLeft = true;
-        while (ss >> word)
-        {
-            if (isLeft)
-            {
-                leftSide.push_back(stoi(word));
-                isLeft = false;
-            }
-            else
-            {
-                rightSide.push_back(stoi(word));
-                isLeft = true;
-            }
-        }
+        leftSide.emplace_back(stoi(words[0]));
+        rightSide.emplace_back(stoi(words[1]));
     }
 }
