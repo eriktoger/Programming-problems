@@ -1,10 +1,6 @@
 /googletest
 !CmakeLists.txt
 
-!20*/*/test_files/
-!20*/*/test_files/*/
-!20*/*/test_files/*/*.txt
-
 !ExampleDay/test_files/
 !ExampleDay/test_files/*/
 !ExampleDay/test_files/*/*.txt
