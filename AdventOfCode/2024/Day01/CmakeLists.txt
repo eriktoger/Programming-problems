@@ -2,7 +2,7 @@ set(CMAKE_CXX_FLAGS " -g")
 
 enable_testing()
 
-add_executable(TEST_01 TEST.cpp solution.cpp)
+add_executable(TEST_01 TEST.cpp solution.cpp solutionTwo.cpp)
 
 target_link_libraries(TEST_01 utils)
 
