@@ -1,42 +1,38 @@
 #include "solutionOne.h"
+#include "utils.h"
+
+bool isMonotonic(const std::vector<std::string> &report, int initialValue, std::function<bool(int, int)> comparison)
+{
+    int lastLevel = initialValue;
+    for (auto &level : report)
+    {
+        int currentLevel = stoi(level);
+        auto isFaulty = !comparison(currentLevel, lastLevel) && lastLevel != initialValue;
+        if (isFaulty)
+        {
+            return false;
+        }
+        lastLevel = currentLevel;
+    }
+
+    return true;
+};
 
 vector<string> solutionOne(vector<string> const &input)
 {
     auto reports = splitLinesToWords(input);
     int safeCounter = 0;
-    for (auto report : reports)
+
+    for (const auto &report : reports)
     {
-        bool isIncreasing = true;
-        int lastIncreasingLevel = -1;
-        for (auto level : report)
-        {
-            auto currentLevel = stoi(level);
 
-            if ((currentLevel <= lastIncreasingLevel || currentLevel - lastIncreasingLevel > 3) && lastIncreasingLevel != -1)
-            {
-                isIncreasing = false;
-                break;
-            }
-            lastIncreasingLevel = currentLevel;
-        }
-
-        bool isDecreasing = true;
-        int lastDecreasingLevel = 99999;
-        for (auto level : report)
-        {
-            auto currentLevel = stoi(level);
-            if ((currentLevel >= lastDecreasingLevel || lastDecreasingLevel - currentLevel > 3) && lastDecreasingLevel != 99999)
-            {
-                isDecreasing = false;
-                break;
-            }
-            lastDecreasingLevel = currentLevel;
-        }
+        auto isIncreasing = isMonotonic(report, initialIncreasingValue, increasingComparison);
+        auto isDecreasing = isMonotonic(report, initialDecreasingValue, decreasingComparison);
         if (isIncreasing || isDecreasing)
         {
             safeCounter++;
         }
     }
-    vector<string> result{to_string(safeCounter)};
-    return result;
+
+    return {to_string(safeCounter)};
 }
