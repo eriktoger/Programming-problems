@@ -11,3 +11,8 @@
   - "program": "${workspaceFolder}/AdventOfCode/build/2024/Day01/TEST_01",
 - Set standard to c++23
 - Search for @ext:ms-vscode.cpptools cpp standard in settings
+
+# Segmentation fault
+
+I needed to add the "--static" to timer. But running it messes up the other tests, causing segementation fault.
+For now, just delete the build-folder after running the timer code.

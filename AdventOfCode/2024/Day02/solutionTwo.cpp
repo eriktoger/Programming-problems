@@ -2,7 +2,7 @@
 #include "utils.h"
 #include "constants.h"
 
-bool isMonotonicWithFaultTolerence(const std::vector<std::string> &report, int initialValue, std::function<bool(int, int)> comparison)
+bool isMonotonicWithFaultTolerence(const std::vector<int> &report, int initialValue, std::function<bool(int, int)> comparison)
 {
     for (int i = 0; i < report.size(); i++)
     {
@@ -16,7 +16,7 @@ bool isMonotonicWithFaultTolerence(const std::vector<std::string> &report, int i
             {
                 continue;
             }
-            int currentLevel = stoi(report[j]);
+            int currentLevel = report[j];
             auto isFaulty = !comparison(currentLevel, lastLevel) && lastLevel != initialValue;
             if (isFaulty)
             {
@@ -37,7 +37,7 @@ bool isMonotonicWithFaultTolerence(const std::vector<std::string> &report, int i
 
 int faultTolerenceLimit = 1;
 
-bool isMonotonicWithFaultTolerenceRecursive(const std::vector<std::string> &report, int initialValue, std::function<bool(int, int)> comparison, int faultTolerence)
+bool isMonotonicWithFaultTolerenceRecursive(const std::vector<int> &report, int initialValue, std::function<bool(int, int)> comparison, int faultTolerence, int faultTolerenceIndex)
 {
 
     if (faultTolerence > faultTolerenceLimit)
@@ -48,28 +48,22 @@ bool isMonotonicWithFaultTolerenceRecursive(const std::vector<std::string> &repo
     int lastLevel = initialValue;
     for (int i = 0; i < report.size(); i++)
     {
-        int currentLevel = stoi(report.at(i));
-        auto isFaulty = !comparison(currentLevel, lastLevel) && lastLevel != initialValue;
-        if (isFaulty)
+
+        if (faultTolerenceIndex != -1 && i == faultTolerenceIndex)
         {
-            vector<string> removedFirstFault;
-            vector<string> removedSecondFault;
-            for (size_t j = 0; j < report.size(); j++)
-            {
-                if (i != j)
-                {
-                    removedFirstFault.push_back(report[j]);
-                }
-                if (i - 1 != j)
-                {
-                    removedSecondFault.push_back(report[j]);
-                }
-            }
-            bool firstFault = isMonotonicWithFaultTolerenceRecursive(removedFirstFault, initialValue, comparison, faultTolerence + 1);
-            bool secondFault = isMonotonicWithFaultTolerenceRecursive(removedSecondFault, initialValue, comparison, faultTolerence + 1);
-            return firstFault || secondFault;
+            continue;
         }
-        lastLevel = currentLevel;
+
+        {
+            int currentLevel = report.at(i);
+            auto isFaulty = !comparison(currentLevel, lastLevel) && lastLevel != initialValue;
+            if (isFaulty)
+            {
+
+                return isMonotonicWithFaultTolerenceRecursive(report, initialValue, comparison, faultTolerence + 1, i) || isMonotonicWithFaultTolerenceRecursive(report, initialValue, comparison, faultTolerence + 1, i - 1);
+            }
+            lastLevel = currentLevel;
+        }
     }
 
     return true;
@@ -77,7 +71,7 @@ bool isMonotonicWithFaultTolerenceRecursive(const std::vector<std::string> &repo
 
 vector<string> solutionTwo(vector<string> const &input)
 {
-    auto reports = splitLinesToWords(input);
+    auto reports = splitLinesToInts(input);
     int safeCounter = 0;
 
     for (const auto &report : reports)
@@ -96,14 +90,14 @@ vector<string> solutionTwo(vector<string> const &input)
 
 vector<string> solutionTwoRecursive(vector<string> const &input)
 {
-    auto reports = splitLinesToWords(input);
+    auto reports = splitLinesToInts(input);
     int safeCounter = 0;
 
     for (const auto &report : reports)
     {
 
-        auto isIncreasing = isMonotonicWithFaultTolerenceRecursive(report, initialIncreasingValue, increasingComparison, 0);
-        auto isDecreasing = isMonotonicWithFaultTolerenceRecursive(report, initialDecreasingValue, decreasingComparison, 0);
+        auto isIncreasing = isMonotonicWithFaultTolerenceRecursive(report, initialIncreasingValue, increasingComparison, 0, -1);
+        auto isDecreasing = isMonotonicWithFaultTolerenceRecursive(report, initialDecreasingValue, decreasingComparison, 0, -1);
         if (isIncreasing || isDecreasing)
         {
             safeCounter++;

@@ -4,3 +4,5 @@
 !ExampleDay/test_files/
 !ExampleDay/test_files/*/
 !ExampleDay/test_files/*/*.txt
+
+timer/build

@@ -20,7 +20,7 @@ const std::string partTwoPath = path + \"partTwo/\";
 
 touch CMakeLists.txt 
 
-echo "set(CMAKE_CXX_FLAGS \" -g\")
+echo "set(CMAKE_CXX_FLAGS \" -g -Wall -Wextra\")
 
 enable_testing()
 
