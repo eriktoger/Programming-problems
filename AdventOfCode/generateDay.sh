@@ -24,7 +24,7 @@ echo "set(CMAKE_CXX_FLAGS \" -g\")
 
 enable_testing()
 
-add_executable($executable TEST.cpp solutionOne.cpp solutionTwo.cpp)
+add_executable($executable Test.cpp solutionOne.cpp solutionTwo.cpp)
 
 target_link_libraries($executable common)
 
