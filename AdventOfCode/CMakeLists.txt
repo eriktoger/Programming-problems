@@ -27,3 +27,4 @@ add_subdirectory("2024/Day03")
 add_subdirectory("2024/Day04")
 
 add_subdirectory("2024/Day05")
+add_subdirectory("2024/Day06")
