@@ -36,12 +36,3 @@ Coordinate rotate(Coordinate currentDirection)
         return upDirection;
     }
 }
-
-Coordinate upDirection = {-1, 0};
-Coordinate downDirection = {1, 0};
-Coordinate leftDirection = {0, -1};
-Coordinate rightDirection = {0, 1};
-
-char obstacle = '#';
-char freeSpace = '.';
-char guard = '^';

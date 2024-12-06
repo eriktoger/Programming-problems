@@ -18,7 +18,7 @@ struct Coordinate
         return cord;
     }
 
-    bool operator==(const Coordinate &rhs)
+    bool operator==(const Coordinate &rhs) const
     {
         auto isEqual = this->row == rhs.row && this->col == rhs.col;
         return isEqual;
@@ -35,13 +35,13 @@ Coordinate findGuardPosition(vector<string> const &input);
 
 Coordinate rotate(Coordinate currentDirection);
 
-extern Coordinate upDirection;
-extern Coordinate downDirection;
-extern Coordinate leftDirection;
-extern Coordinate rightDirection;
+constexpr Coordinate upDirection = {-1, 0};
+constexpr Coordinate downDirection = {1, 0};
+constexpr Coordinate leftDirection = {0, -1};
+constexpr Coordinate rightDirection = {0, 1};
 
-extern char obstacle;
-extern char freeSpace;
-extern char guard;
+constexpr char obstacle = '#';
+constexpr char freeSpace = '.';
+constexpr char guard = '^';
 
 #endif // ADVENT_OF_CODE_UTILS_H
