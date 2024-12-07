@@ -71,7 +71,7 @@ bool isMonotonicWithFaultTolerenceRecursive(const std::vector<int> &report, int 
 
 vector<string> solutionTwo(vector<string> const &input)
 {
-    auto reports = splitLinesToInts(input);
+    auto reports = splitLinesToInt(input);
     int safeCounter = 0;
 
     for (const auto &report : reports)
@@ -90,7 +90,7 @@ vector<string> solutionTwo(vector<string> const &input)
 
 vector<string> solutionTwoRecursive(vector<string> const &input)
 {
-    auto reports = splitLinesToInts(input);
+    auto reports = splitLinesToInt(input);
     int safeCounter = 0;
 
     for (const auto &report : reports)

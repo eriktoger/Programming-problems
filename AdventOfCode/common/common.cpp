@@ -82,20 +82,17 @@ vector<vector<string>> splitOnDelimiter(const vector<string> &input, const strin
     return result;
 }
 
-vector<vector<int>> splitLinesToInts(vector<string> const &input)
+auto toStoi = [](const string &str)
+{ return stoi(str); };
+vector<vector<int>> splitLinesToInt(vector<string> const &input)
 {
-    vector<vector<int>> result;
-    for (auto const &line : input)
-    {
-        vector<int> temp;
-        stringstream ss(line);
-        string word;
-        while (ss >> word)
-        {
-            temp.emplace_back(stoi(word));
-        }
-        result.emplace_back(temp);
-    }
 
-    return result;
+    return splitLinesToNumbers<int>(input, toStoi);
+}
+
+auto toStoll = [](const string &str)
+{ return stoll(str); };
+vector<vector<long long>> splitLinesToLL(vector<string> const &input)
+{
+    return splitLinesToNumbers<long long>(input, toStoll);
 }
