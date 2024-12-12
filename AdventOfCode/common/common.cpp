@@ -96,3 +96,15 @@ vector<vector<long long>> splitLinesToLL(vector<string> const &input)
 {
     return splitLinesToNumbers<long long>(input, toStoll);
 }
+
+bool isOutOfBounds(vector<string> const &input, int row, int col)
+{
+    if (row < 0 || col < 0)
+    {
+        return true;
+    }
+    auto castedRow = static_cast<size_t>(row);
+    auto castedCol = static_cast<size_t>(col);
+
+    return castedRow >= input.size() || castedCol >= input[0].size();
+}

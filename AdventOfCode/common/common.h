@@ -15,6 +15,7 @@ vector<vector<string>> splitOnDelimiter(vector<string> const &input, const strin
 vector<vector<int>> splitLinesToInt(vector<string> const &input);
 vector<vector<long long>> splitLinesToLL(vector<string> const &input);
 void fromVectorToFile(string fileName, vector<string> const &input);
+bool isOutOfBounds(vector<string> const &input, int row, int col);
 
 template <typename T, typename Converter>
 std::vector<std::vector<T>> splitLinesToNumbers(
