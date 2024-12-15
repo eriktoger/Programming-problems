@@ -1,32 +1,5 @@
 #include "solutionOne.h"
 
-struct Coordinate
-{
-    int row;
-    int col;
-
-    Coordinate operator+=(const Coordinate &other)
-    {
-        row += other.row;
-        col += other.col;
-        return *this;
-    }
-};
-
-char upToken = '^';
-char rightToken = '>';
-char downToken = 'v';
-char leftToken = '<';
-char freeToken = '.';
-char wallToken = '#';
-char robotToken = '@';
-char boxToken = 'O';
-
-Coordinate upDirection = {-1, 0};
-Coordinate rightDirection = {0, 1};
-Coordinate downDirection = {1, 0};
-Coordinate leftDirection = {0, -1};
-
 void moveRobot(vector<string> &grid, Coordinate &robotPosition, const Coordinate &direction)
 {
     auto firstFreePosition = Coordinate{-1, -1};
