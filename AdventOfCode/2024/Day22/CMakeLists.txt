@@ -2,7 +2,7 @@ set(CMAKE_CXX_FLAGS " -g -Wall -Wextra")
 
 enable_testing()
 
-add_executable(TEST_22 Test.cpp solutionOne.cpp solutionTwo.cpp)
+add_executable(TEST_22 Test.cpp solutionOne.cpp solutionTwo.cpp utils.cpp)
 
 target_link_libraries(TEST_22 common)
 
