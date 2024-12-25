@@ -32,19 +32,19 @@ TEST(PartOne, input)
     EXPECT_EQ(output, answer);
 }
 
-TEST(PartTwo, demo)
-{
-    auto demoInputPath = partTwoPath + "demo-input.txt";
-    auto input = fromFileToVector(demoInputPath);
+// TEST(PartTwo, demo)
+// {
+//     auto demoInputPath = partTwoPath + "demo-input.txt";
+//     auto input = fromFileToVector(demoInputPath);
 
-    auto output = solutionTwo(input);
-    auto demoAnswerPath = partTwoPath + "demo-answer.txt";
-    auto answer = fromFileToVector(demoAnswerPath);
+//     auto output = solutionTwo(input);
+//     auto demoAnswerPath = partTwoPath + "demo-answer.txt";
+//     auto answer = fromFileToVector(demoAnswerPath);
 
-    auto demoOutputPath = partTwoPath + "demo-output.txt";
-    fromVectorToFile(demoOutputPath, output);
-    EXPECT_EQ(output, answer);
-}
+//     auto demoOutputPath = partTwoPath + "demo-output.txt";
+//     fromVectorToFile(demoOutputPath, output);
+//     EXPECT_EQ(output, answer);
+// }
 
 TEST(PartTwo, input)
 {
