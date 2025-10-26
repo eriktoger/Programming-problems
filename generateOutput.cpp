@@ -4,6 +4,7 @@
 #include <string>
 
 #include "myPath.h"
+#include <cstring>
 
 using namespace std;
 
@@ -65,10 +66,19 @@ int main(int argc, char *argv[])
         return 1;
     }
     myPath.append(argv[1]);
-
     ofstream outfile;
 
     outfile.open(myPath + "output.cpp");
+    if (outfile.is_open())
+    {
+        cout << "File opened successfully\n";
+    }
+    else
+    {
+        cout << "Error opening file\n";
+        cerr << "errno=" << errno << " -> " << strerror(errno) << "\n";
+        return 1;
+    }
 
     readHeaderFile(outfile, myPath);
 
