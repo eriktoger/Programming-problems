@@ -19,7 +19,10 @@ Hackerrank
 
 # Create new problem:
 
-- ./generateProblem.sh CodeForces 1400 1714E Add-Modulo-10
+## Catch 2
+- ./generateProblem.sh CodeForces 1400 1714E Add-Modulo-10 
+## Google  test
+- ./generateProblemGTest.sh CodeForces 800-1000 71A Way-Too-Long-Words
 
 # Run tests:
 
